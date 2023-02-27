@@ -2,11 +2,21 @@ import { useState } from 'react';
 
 import styles from './Input.module.css';
 
-const Input = () => {
+const Input = ({todo, setTodo}) => {
   const [todoText, setTodoText] = useState("");
 
   const handleTodoText = (e) => {
     setTodoText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    const saveData = new Object({
+      status: true,
+      text: todoText,
+    });
+    setTodo(new Array(...todo, saveData));
+    localStorage.setItem("todo", JSON.stringify(new Array(...todo, saveData)));
+    setTodoText("");
   };
 
   return (
@@ -18,7 +28,12 @@ const Input = () => {
           onChange={handleTodoText}
         />
 
-        <div className={styles.submit_btn}>등록하기</div>
+        <div 
+          className={styles.submit_btn}
+          onClick={handleSubmit}
+        >
+          등록하기
+        </div>
     </div>
   );
 }

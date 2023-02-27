@@ -24,6 +24,14 @@
   line-height: 16px ;
 }
 
+.Tode > .uncomplete {
+  text-decoration: none;
+}
+
+.Todo > .complete {
+  text-decoration: line-through;
+}
+
 .Todo > .btn_group {
   display: flex;
   gap: 5px;
