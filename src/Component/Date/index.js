@@ -1,4 +1,4 @@
-import { styles } from './Date.module.css';
+import styles from './Date.module.css';
 
 const TitleDate = () => {
   const nowDate = `${new Date().getFullYear()}년 ${new Date().getMonth() + 1}월 ${new Date().getDate()}일`;
